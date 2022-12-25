@@ -1,0 +1,12 @@
+module.exports.Admin = require('./admin.model');
+module.exports.User = require('./user.model');
+module.exports.Upload = require('./upload.model');
+module.exports.ArticleLink = require('./articleLink.model');
+module.exports.ArticleSummary = require('./articleSummary.model');
+module.exports.Categpry = require('./category.modell');
+module.exports.Posts = require('./posts.model');
+module.exports.Products = require('./products.model');
+module.exports.Rating = require('./rating.model');
+module.exports.StarterPack = require('./starterPack.model');
+module.exports.Stylist = require('./stylist.model');
+module.exports.VideoLink = require('./videoLink.model');
