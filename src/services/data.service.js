@@ -2,11 +2,6 @@ const httpStatus = require('http-status');
 const { OrderCreated,OrderCancelled,OrderExchanged } = require('../models');
 const ApiError = require('../utils/ApiError');
 
-/**
- * Create a user
- * @param {Object} userBody
- * @returns {Promise<User>}
- */
 const createOrder = async (body) => {
   return OrderCreated.create(body);
 };
@@ -15,6 +10,10 @@ const createCancelled = async (body) => {
 };
 const createExchange = async (body) => {
   return OrderExchanged.create(body);
+};
+
+const updateOrderById = async (userId, updateBody) => {
+  return await OrderCreated.findByIdAndUpdate(userId, updateBody)
 };
 
 
@@ -34,5 +33,6 @@ module.exports = {
   getAllOrder,
   createExchange,
   createCancelled,
-  createOrder
+  createOrder,
+  updateOrderById
 };

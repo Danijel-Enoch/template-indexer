@@ -4,7 +4,7 @@ const validate = require('../../middlewares/validate');
 const userValidation = require('../../validations/user.validation');
 const {getAllExchanged,
   getAllCancelled,
-  getAllOrder} = require('../../controllers/data');
+  getAllOrder,UpdateOrder} = require('../../controllers/data');
 
 const router = express.Router();
 
@@ -15,6 +15,11 @@ router
   router
   .route('/data/ord')
   .get( getAllOrder);
+
+  router
+  .route('/data/ord/:id')
+  .patch( UpdateOrder);
+  
   router
   .route('/data/cl')
   .get( getAllCancelled);

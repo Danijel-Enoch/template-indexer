@@ -1,3 +1,4 @@
+const { boolean } = require("joi");
 const mongoose=require("mongoose");
 const { toJSON, paginate } = require('./plugins');
 const OrderCreatedSchema=mongoose.Schema({
@@ -17,6 +18,9 @@ const OrderCreatedSchema=mongoose.Schema({
     type:String
   },
   quoteAmount:{
+    type:String
+  },
+  tx:{
     type:String
   },
   creator:{type:String},

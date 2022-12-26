@@ -21,6 +21,10 @@ const getAllOrder = catchAsync(async (req, res) => {
   const result = await dataService.getAllOrder()
   res.send(result);
 });
+const UpdateOrder = catchAsync(async (req, res) => {
+  const result = await dataService.updateOrderById(req.params.id,req.body)
+  res.send(result);
+});
 const getAllCancelled = catchAsync(async (req, res) => {
   const result = await dataService.getAllCancelled()
   res.send(result);
@@ -37,5 +41,6 @@ module.exports = {
   getAllOrder,
   createExchange,
   createCancelled,
-  createOrder
+  createOrder,
+  UpdateOrder
 };

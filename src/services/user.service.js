@@ -52,6 +52,7 @@ const getUserByEmail = async (email) => {
  * @param {Object} updateBody
  * @returns {Promise<User>}
  */
+
 const updateUserById = async (userId, updateBody) => {
   const user = await getUserById(userId);
   if (!user) {

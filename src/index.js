@@ -23,7 +23,7 @@ function listenToEvent() {
     const cquoteAmount=convert(quoteAmount)
     const buy="buy"
     console.log({ Oid, orderType, tokenA, tokenB, cBaseAmount, cquoteAmount,creator },{event})
-    await OrderCreated.create({ Oid, orderType, tokenA, tokenB, baseAmount:cBaseAmount, quoteAmount:cquoteAmount,creator })
+    await OrderCreated.create({ Oid, orderType, tokenA, tokenB, baseAmount:cBaseAmount, quoteAmount:cquoteAmount,creator,tx:"false" })
   })
   listener.on("OrderCancelled", async (Oid, person, event) => {
     console.log({ Oid, person })
