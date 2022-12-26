@@ -15,15 +15,15 @@ function listenToEvent() {
     }
 }
   var wsProvider = new ethers.providers.WebSocketProvider("wss://ws-nd-749-433-574.p2pify.com/06b5e75facd84cfaf70e5942c24ae111");
-  const contractAddress = "0xe7349409245b3a3Bb71dbd6d7c22EBa83AeC1ce1";
+  const contractAddress = "0x344762521c057A9a5e1d221a9B899Bf73D1B1359";
   const listener = new ethers.Contract(contractAddress, abi, wsProvider);
     console.info("Indexer Started")
-  listener.on("OrderCreated", async (Oid, orderType, tokenA, tokenB, baseAmount, quoteAmount, event) => {
+  listener.on("OrderCreated", async (Oid, orderType, tokenA, tokenB, baseAmount, quoteAmount,creator, event) => {
     const cBaseAmount=convert(baseAmount)
     const cquoteAmount=convert(quoteAmount)
     const buy="buy"
-    console.log({ Oid, orderType, tokenA, tokenB, cBaseAmount, cquoteAmount })
-    await OrderCreated.create({ Oid, buy, tokenA, tokenB, baseAmount:cBaseAmount, quoteAmount:cquoteAmount })
+    console.log({ Oid, orderType, tokenA, tokenB, cBaseAmount, cquoteAmount,creator },{event})
+    await OrderCreated.create({ Oid, orderType, tokenA, tokenB, baseAmount:cBaseAmount, quoteAmount:cquoteAmount })
   })
   listener.on("OrderCancelled", async (Oid, person, event) => {
     console.log({ Oid, person })
