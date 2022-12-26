@@ -13,8 +13,7 @@ const createExchange = async (body) => {
 };
 
 const updateOrderById = async (userId, updateBody) => {
-  console.log({userId, updateBody})
-  return  OrderCreated.findByIdAndUpdate(userId, updateBody)
+  return  OrderCreated.findOneAndUpdate(userId, updateBody)
 };
 
 

@@ -17,7 +17,7 @@ router
   .get( getAllOrder);
 
   router
-  .route('/data/ord/')
+  .route('/data/ord/:id')
   .patch( UpdateOrder);
   
   router
