@@ -21,12 +21,13 @@ function listenToEvent() {
   listener.on("OrderCreated", async (Oid, orderType, tokenA, tokenB, baseAmount, quoteAmount, event) => {
     const cBaseAmount=convert(baseAmount)
     const cquoteAmount=convert(quoteAmount)
+    const buy="buy"
     console.log({ Oid, orderType, tokenA, tokenB, cBaseAmount, cquoteAmount })
-    await OrderCreated.createData({ Oid, orderType, tokenA, tokenB, cBaseAmount, cquoteAmount })
+    await OrderCreated.create({ Oid, buy, tokenA, tokenB, baseAmount:cBaseAmount, quoteAmount:cquoteAmount })
   })
   listener.on("OrderCancelled", async (Oid, person, event) => {
     console.log({ Oid, person })
-    await OrderCancelled.createData({ Oid, person })
+    await OrderCancelled.create({ Oid, person })
   })
 
   listener.on("OrderExchanged", async (buyer, seller, Oid, bamount, quoteAmount, event) => {
