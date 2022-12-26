@@ -22,7 +22,8 @@ const getAllOrder = catchAsync(async (req, res) => {
   res.send(result);
 });
 const UpdateOrder = catchAsync(async (req, res) => {
-  const result = await dataService.updateOrderById(req.params.id,req.body)
+  const result = await dataService.updateOrderById(req.id,req.body)
+  console.log(result)
   res.send(result);
 });
 const getAllCancelled = catchAsync(async (req, res) => {
