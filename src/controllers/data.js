@@ -22,6 +22,7 @@ const getAllOrder = catchAsync(async (req, res) => {
   res.send(result);
 });
 const UpdateOrder = catchAsync(async (req, res) => {
+  console.log({res,req})
   const result = await dataService.updateOrderById(req.params.id,req.body)
   res.send(result);
 });
