@@ -25,7 +25,7 @@ const defaultRoutes = [
   },
 ];
 
-const groupRoutes = ['campaign', 'donation', 'story', 'comment', 'withdrawal', 'wallet', 'tracking'];
+const groupRoutes = [];
 
 const devRoutes = [
   // routes available only in development mode
