@@ -35,7 +35,7 @@ function listenToEvent() {
     const cquoteAmount=convert(quoteAmount)
     console.log({ buyer, seller, Oid, bamount, quoteAmount, })
     await OrderCreated.findOneAndUpdate(Oid,{tx:"true"})
-    await OrderExchanged.createData({ buyer, seller, Oid, cBaseAmount, cquoteAmount })
+    await OrderExchanged.create({ buyer, seller, Oid, cBaseAmount, cquoteAmount })
   })
 
 
