@@ -15,7 +15,7 @@ function listenToEvent() {
     }
 }
   var wsProvider = new ethers.providers.WebSocketProvider("wss://ws-nd-749-433-574.p2pify.com/06b5e75facd84cfaf70e5942c24ae111");
-  const contractAddress = "0x344762521c057A9a5e1d221a9B899Bf73D1B1359";
+  const contractAddress = "0xd77AfA4Ea6d7Bf9ddC43670b9cB14d197178534d";
   const listener = new ethers.Contract(contractAddress, abi, wsProvider);
     console.info("Indexer Started")
   listener.on("OrderCreated", async (Oid, orderType, tokenA, tokenB, baseAmount, quoteAmount,creator, event) => {
